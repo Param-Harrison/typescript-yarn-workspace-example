@@ -1,4 +1,5 @@
 import {Command, flags} from '@oclif/command'
+import { add } from '@cashew/common';
 
 export default class Hello extends Command {
   static description = 'describe the command here'
@@ -24,6 +25,9 @@ hello world from ./src/hello.ts!
 
     const name = flags.name || 'world'
     this.log(`hello ${name} from ./src/commands/hello.ts`)
+
+    this.log(`1 + 1 is ${add(1, 1)}`);
+
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
